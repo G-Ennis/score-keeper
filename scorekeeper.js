@@ -43,6 +43,6 @@ resetButton.addEventListener("click", function(){
 });
 
 numInput.addEventListener("change", function(){ //change event runs anytime the value changes, works better than "click" for this case
-    winningScoreDisplay.textContent = numInput.value;
-    winningScore = Number(numInput.value);
+    winningScoreDisplay.textContent = this.value;
+    winningScore = Number(this.value);
 });
