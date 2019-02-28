@@ -3,10 +3,13 @@ var p2Button = document.querySelector("#p2");
 var resetButton = document.getElementById("reset");
 var p1Display = document.getElementById("p1Display");
 var p2Display = document.getElementById("p2Display");
+var numInput = document.querySelector("input");
+var winningScoreDisplay = document.querySelector("p span");
 var p1Score = 0; // variable initially set to 0, will be incremented with each "click"
 var p2Score = 0;
 var gameOver = false; // gameOver variable will be true when a player reaches the winning score
 var winningScore = 5;
+
 
 p1Button.addEventListener("click", function(){
     if (!gameOver){
@@ -37,4 +40,9 @@ resetButton.addEventListener("click", function(){
     p1Display.classList.remove("winner");
     p2Display.classList.remove("winner");
     gameOver = false;
+});
+
+numInput.addEventListener("change", function(){ //change event runs anytime the value changes, works better than "click" for this case
+    winningScoreDisplay.textContent = numInput.value;
+    winningScore = Number(numInput.value);
 });
